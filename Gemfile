@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
+ruby '2.2.0'
 
+# Load environment variables from .env into ENV in development.
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -29,6 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 gem 'unicorn'
+
+# See https://devcenter.heroku.com/articles/rails-integration-gems
+gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

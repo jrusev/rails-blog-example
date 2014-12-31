@@ -1,6 +1,9 @@
 class ArticlesController < ApplicationController
   
-  http_basic_authenticate_with name: "ime", password: "parola", except: [:index, :show]
+  http_basic_authenticate_with(
+    name: ENV["BASIC_AUTH_NAME"],
+    password: ENV["BASIC_AUTH_PASS"],
+    except: [:index, :show])
 
   # index, show, new, edit, create, update, destroy
   def index
