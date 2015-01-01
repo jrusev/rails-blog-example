@@ -5,6 +5,15 @@ class ArticlesController < ApplicationController
     password: ENV["BASIC_AUTH_PASS"],
     except: [:index, :show])
 
+  def search
+    if params[:query].blank?
+     redirect_to articles_path
+    else      
+      substr = params[:query].downcase
+      @articles = Article.where 'LOWER(title) LIKE ?', "%#{substr}%"
+    end
+  end
+
   # index, show, new, edit, create, update, destroy
   def index
     @articles = Article.all

@@ -4,6 +4,9 @@ ruby '2.2.0'
 # Load environment variables from .env into ENV in development.
 gem 'dotenv-rails', :groups => [:development, :test]
 
+# Annotates models based on the database schema. 
+gem 'annotate', group: :development
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
