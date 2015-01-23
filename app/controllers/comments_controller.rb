@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   http_basic_authenticate_with(
     name: ENV["BASIC_AUTH_NAME"],
     password: ENV["BASIC_AUTH_PASS"],
-    only: :destroy)
+    only: :destroy, :create)
 
   def create
     @article = Article.find(params[:article_id])
